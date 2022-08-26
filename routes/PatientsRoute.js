@@ -19,11 +19,10 @@ PatientsRoute.get("/all", async(req,res)=>{
     res.status(200).send(patients);
 });
 
-// TodoRoute.get("/allpending/:id", async(req,res)=>{
-//     const todos = await Todo.find({$and: [{"id": req.params.id},
-//     {"todoStatus": "Pending"}]});
-//     res.status(200).send(todos);
-// });
+PatientsRoute.get("/filter/M", async(req,res)=>{
+    const patients = await Patients.find({"gender":"M"});
+    res.status(200).send(patients);
+});
 
 // //delete patient
 PatientsRoute.delete("/delete/:id", async(req,res)=>{
