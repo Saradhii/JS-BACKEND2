@@ -4,16 +4,16 @@ const Router = require("express");
 
 const PatientsRoute = Router();
 
-// add new todo
-// TodoRoute.post("/newtodo",(req,res)=>{
-//     const {id,todoTask,todoStatus,todoTag}=req.body;
-//     const todo = new Todo({id,todoTask,todoStatus,todoTag});
-//     todo.save().then(()=>{
-//         res.status(200).send({message:"Todo created successfully"});
-//     });
-// })
+// add new patient
+PatientsRoute.post("/newpatient",(req,res)=>{
+    const {name,age,gender,img,medicine}=req.body;
+    const todo = new Patients({name,age,gender,img,medicine});
+    todo.save().then(()=>{
+        res.status(200).send({message:"Patient created successfully"});
+    });
+})
 
-// get all todos respective to userid
+// get all patients
 PatientsRoute.get("/all", async(req,res)=>{
     const patients = await Patients.find();
     res.status(200).send(patients);
