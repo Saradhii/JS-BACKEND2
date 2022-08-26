@@ -31,6 +31,18 @@ PatientsRoute.get("/filter/F", async(req,res)=>{
     res.status(200).send(patients);
 });
 
+//sort by age Low to high
+PatientsRoute.get("/sort/L", async(req,res)=>{
+    const patients = await Patients.find().sort("age");
+    res.status(200).send(patients);
+});
+
+//sort by age High to Low
+PatientsRoute.get("/sort/H", async(req,res)=>{
+    const patients = await Patients.find().sort({"age":-1});
+    res.status(200).send(patients);
+});
+
 // //delete patient
 PatientsRoute.delete("/delete/:id", async(req,res)=>{
     const data = await Patients.deleteOne({ _id: req.params.id });
