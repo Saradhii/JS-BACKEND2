@@ -19,8 +19,15 @@ PatientsRoute.get("/all", async(req,res)=>{
     res.status(200).send(patients);
 });
 
+//filter by male
 PatientsRoute.get("/filter/M", async(req,res)=>{
     const patients = await Patients.find({"gender":"M"});
+    res.status(200).send(patients);
+});
+
+//filter by female
+PatientsRoute.get("/filter/F", async(req,res)=>{
+    const patients = await Patients.find({"gender":"F"});
     res.status(200).send(patients);
 });
 
