@@ -1,7 +1,7 @@
 const connection = require("./db/db");
 const express = require("express");
 const cors = require("cors");
-const TodoRoute = require("./routes/TodoRoute");
+const PatientsRoute = require("./routes/PatientsRoute");
 const UserRoute = require("./routes/UserRoute");
 
 // App creation
@@ -14,7 +14,7 @@ app.use(
       origin: ["http://localhost:3000","https://harmonious-clafoutis-0cfde6.netlify.app"],
     })
   );
-app.use("/todo",TodoRoute);
+app.use("/patient",PatientsRoute);
 app.use("/user",UserRoute);
 
 //testing
