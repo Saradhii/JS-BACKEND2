@@ -17,6 +17,11 @@ app.use(
 app.use("/todo",TodoRoute);
 app.use("/user",UserRoute);
 
+//testing
+app.get("/",(req,res)=>{
+  res.send("Mock11 working....")
+})
+
 // starting the server && checking db connection
 const PORT = process.env.PORT || 8060
 app.listen(PORT, async () => {
