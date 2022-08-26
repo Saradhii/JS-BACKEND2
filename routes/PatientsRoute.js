@@ -43,7 +43,7 @@ PatientsRoute.get("/sort/H", async(req,res)=>{
     res.status(200).send(patients);
 });
 
-// //delete patient
+//delete patient
 PatientsRoute.delete("/delete/:id", async(req,res)=>{
     const data = await Patients.deleteOne({ _id: req.params.id });
     return res.status(200).send({message: "Patient deleted Succsessfully"});

@@ -19,4 +19,10 @@ MedicineRoute.patch("/edit/:_id",async (req,res) => {
   }
 );
 
+//delete medicine
+MedicineRoute.delete("/delete/:id", async(req,res)=>{
+    const data = await Medicine.deleteOne({ "user": req.params.id });
+    return res.status(200).send({message: "medicine deleted Succsessfully"});
+})
+
 module.exports=MedicineRoute;
