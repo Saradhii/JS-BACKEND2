@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const PatientsRoute = require("./routes/PatientsRoute");
 const UserRoute = require("./routes/UserRoute");
-
+const MedicineRoute = require("./routes/MedicineRoute");
 // App creation
 const app = express();
 //Needed middlewares
@@ -16,7 +16,7 @@ app.use(
   );
 app.use("/patient",PatientsRoute);
 app.use("/user",UserRoute);
-
+app.use("/medicine",MedicineRoute);
 //testing
 app.get("/",(req,res)=>{
   res.send("Mock11 working....")
