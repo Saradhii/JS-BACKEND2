@@ -56,11 +56,6 @@ PatientsRoute.get("/search", async (req, res) => {
     res.status(200).send(patient);
 });
 
-// //update todo by id 
-// TodoRoute.patch("/edit/:_id",async (req,res) => {
-//     const updated = await Todo.updateOne({"_id":req.params},{$set:{"todoTask":req.body.todoTask , "todoStatus":req.body.todoStatus, "todoTag":req.body.todoTag }});
-//     res.status(200).send(updated);
-//   }
-// );
+
 
 module.exports=PatientsRoute;
