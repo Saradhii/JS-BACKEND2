@@ -25,11 +25,11 @@ PatientsRoute.get("/all", async(req,res)=>{
 //     res.status(200).send(todos);
 // });
 
-// //delete todo
-// TodoRoute.delete("/delete/:id", async(req,res)=>{
-//     const data = await Todo.deleteOne({ _id: req.params.id });
-//     return res.status(200).send({ message: "todo Deleted Succsessfully" });
-// })
+// //delete patient
+PatientsRoute.delete("/delete/:id", async(req,res)=>{
+    const data = await Patients.deleteOne({ _id: req.params.id });
+    return res.status(200).send({message: "Patient deleted Succsessfully"});
+})
 
 // //get single todo by id
 // TodoRoute.get("/singletodo/:id",async(req,res)=>{
