@@ -49,11 +49,12 @@ PatientsRoute.delete("/delete/:id", async(req,res)=>{
     return res.status(200).send({message: "Patient deleted Succsessfully"});
 })
 
-// //get single todo by id
-// TodoRoute.get("/singletodo/:id",async(req,res)=>{
-//     const bestProduct = await Todo.find(req.params);
-//     res.status(200).send(bestProduct);
-// })
+// get patient by name search
+PatientsRoute.get("/search", async (req, res) => {
+    const { name } = req.query;
+    const patient = await Patients.find({ $text: { $search: name } });
+    res.status(200).send(patient);
+});
 
 // //update todo by id 
 // TodoRoute.patch("/edit/:_id",async (req,res) => {
