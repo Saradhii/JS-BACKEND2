@@ -13,7 +13,7 @@ MedicineRoute.get("/single/:id", async(req,res)=>{
 })
 
 // //update medicine by userid
-MedicineRoute.patch("/edit/:_id",async (req,res) => {
+MedicineRoute.put("/edit/:_id",async (req,res) => {
     const updated = await Medicine.updateOne({"user":req.params},{$set:{"name":req.body.name ,"medicine":req.body.medicine }});
     res.status(200).send(updated);
   }
