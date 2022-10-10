@@ -6,7 +6,7 @@ const UserRoute = require("./routes/UserRoute");
 const MedicineRoute = require("./routes/MedicineRoute");
 
 const app = express();
-//Needed middlewares
+
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(
