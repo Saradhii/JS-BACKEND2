@@ -17,7 +17,7 @@ app.use(
 app.use("/patient",PatientsRoute);
 app.use("/user",UserRoute);
 app.use("/medicine",MedicineRoute);
-//testing
+
 app.get("/",(req,res)=>{
   res.send("Mock11 working....")
 })
