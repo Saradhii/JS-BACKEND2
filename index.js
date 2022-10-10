@@ -4,7 +4,7 @@ const cors = require("cors");
 const PatientsRoute = require("./routes/PatientsRoute");
 const UserRoute = require("./routes/UserRoute");
 const MedicineRoute = require("./routes/MedicineRoute");
-// App creation
+
 const app = express();
 //Needed middlewares
 app.use(express.urlencoded({extended:true}));
